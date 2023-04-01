@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    display: flex;
+    height: 80px;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid ;
+}
+.navbar > .navbar-list {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+.similar-head {
+    text-align: center;
+}
+
+.product-kind-list ,.product-list {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.slug {
+    box-sizing: border-box;
+    padding: 40px;
+    display: flex;
+    gap: 30px;
+}
+.slug-photo {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.slug-photos {
+    display: flex;
+    gap: 20px;
+}
