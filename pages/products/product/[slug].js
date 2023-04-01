@@ -3,24 +3,31 @@ import { urlFor, client } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
 import Product from '@/components/product'
 import { useState } from 'react'
-
+import Image from 'next/image'
 
 
 const ProductDetails = ({product, products}) => {
   const {image, name, details, productKind, price, slug} = product
   const [index, setIndex] = useState(0)
-
   return (
     <div>
       <div className='slug'>
-
       <div className='slug-photo'>
-      <img src={urlFor(image[index])} height={300}></img>
+      <img
+       src={urlFor(image[index])}
+        alt='glavna slika' 
+        width={300}
+        height={300}/>
       <div className='slug-photos'>
         {
           image.map((img, i) => (
             <a onClick={() => setIndex(i)} key={i}>
-            <img src={urlFor(img)} height={70}  ></img>
+              <img
+                alt='slika'
+                src={urlFor(img)}
+                height={70}
+                width={70}
+              />
             </a>
             ))
           }
