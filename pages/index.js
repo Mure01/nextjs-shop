@@ -1,8 +1,6 @@
 import React from 'react'
 import { client } from '@/lib/client'
-
-import { Product } from '@/components'
-
+import Product from '@/components/product'
 const Home = ({products, kuhinje}) => {
   return (
 <>
