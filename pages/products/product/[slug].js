@@ -13,20 +13,23 @@ const ProductDetails = ({product, products}) => {
     <div>
       <div className='slug'>
       <div className='slug-photo'>
-      <img
-       src={urlFor(image[index])}
+      <Image
+       src={urlFor(image[index]).url()}
         alt='glavna slika' 
         width={300}
-        height={300}/>
+        height={300}
+        unoptimized={true} 
+        />
       <div className='slug-photos'>
         {
           image.map((img, i) => (
             <a onClick={() => setIndex(i)} key={i}>
-              <img
+              <Image
                 alt='slika'
-                src={urlFor(img)}
+                src={urlFor(img).url()}
                 height={70}
                 width={70}
+                unoptimized={true}
               />
             </a>
             ))
