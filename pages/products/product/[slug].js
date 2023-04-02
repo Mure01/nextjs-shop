@@ -39,7 +39,7 @@ const ProductDetails = ({product, products}) => {
       <h3>{price} KM</h3>
       </div>
       </div>
-    <h1 className = 'similar-head'>Slicni proizvodi</h1>
+        <h1 className = 'similar-head'>Slicni proizvodi</h1>
     <div className ='product-kind-list'>
 
     {

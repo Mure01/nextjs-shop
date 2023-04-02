@@ -1,8 +1,7 @@
 import React from 'react'
 import { client } from '@/lib/client'
-import { urlFor } from '@/lib/client'
 
-import { Navbar, Product } from '@/components'
+import { Product } from '@/components'
 
 const Home = ({products, kuhinje}) => {
   return (
