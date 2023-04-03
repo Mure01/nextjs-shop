@@ -11,16 +11,17 @@ const ProductDetails = ({product, products}) => {
   const [index, setIndex] = useState(0)
   return (
     <div>
-      <div className='slug'>
+      <div className=' p-4 space-y-4  md:flex md:p-10 md:space-x-10'>
       <div className='slug-photo'>
       <Image
        src={urlFor(image[index]).url()}
         alt='glavna slika' 
         width={300}
         height={300}
+        className=' w-70 h-fit'
         unoptimized={true} 
         />
-      <div className='slug-photos'>
+      <div className='flex space-x-5 pt-5 flex-wrap justify-start space-y-4 items-baseline'>
         {
           image.map((img, i) => (
             <a onClick={() => setIndex(i)} key={i}>
@@ -29,6 +30,7 @@ const ProductDetails = ({product, products}) => {
                 src={urlFor(img).url()}
                 height={70}
                 width={70}
+                className=' h-20 w-fit hover:cursor-pointer '
                 unoptimized={true}
               />
             </a>
@@ -42,9 +44,8 @@ const ProductDetails = ({product, products}) => {
       <h3>{price} KM</h3>
       </div>
       </div>
-        <h1 className = 'similar-head'>Slicni proizvodi</h1>
-    <div className ='product-kind-list'>
-
+        <h1 className = ' text-center uppercase text-lg p-4'>Slični proizvodi</h1>
+        <div className ='w-full flex flex-wrap justify-center space-y-7 lg:gap-5 items-baseline'>
     {
       products.map(product => (
         ( product.productKind === productKind && product.slug.current !== slug.current &&

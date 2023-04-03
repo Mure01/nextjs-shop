@@ -4,7 +4,7 @@ import Product from '@/components/product'
 
 const ProductsList = ({products}) => {
     return (
-    <div className='product-kind-list'>
+    <div className=' justify-center w-full box-border p-5 flex flex-wrap gap-7 lg:justify-start'>
         {
             products.map(item => (
                 <Product key={item._id} product={item}/>

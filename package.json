@@ -6,11 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tailwind:build": "npx tailwindcss build ./styles/tailwind.css -o ./styles/tailwind.output.css"
+
+
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.17",
+    "@material-tailwind/react": "^1.4.2",
     "@sanity/client": "^5.4.1",
     "@sanity/image-url": "^1.0.2",
     "daisyui": "^2.51.5",

@@ -10,7 +10,9 @@ const Product = ({product: {image, name, slug, price} }) => {
         <Image
           src={urlFor(image && image[0]).url()}
           alt="opis"
-          className=' w-auto h-fit'
+          width={300}
+          height={300}
+          className= ' h-72 w-fit'
           unoptimized={true} 
           />
           <p className='product-name' >{name}</p>

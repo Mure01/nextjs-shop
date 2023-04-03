@@ -4,7 +4,7 @@ import Product from '@/components/product'
 const Home = ({products, kuhinje}) => {
   return (
 <>
-    <div className = 'product-list'>
+    <div className = ' flex space-x-5 flex-wrap justify-evently space-y-4 items-baseline p-10'>
       {
         products.map(product => (
           <Product key={product._id} product={product}/>
