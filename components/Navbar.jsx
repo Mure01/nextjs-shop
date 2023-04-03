@@ -7,15 +7,15 @@ const Navbar = () => {
   const [dropDown, setDropDown] = React.useState(false)
   const [dropDownMd, setDropDownMd] = React.useState(false)
   return (
-      <nav className='bg-background box-border flex relative items-center p-4 justify-between'> 
+      <nav className= 'bg-background box-border flex relative items-center p-4 justify-between'> 
         <Image
           src={logo}
           width={70}
           height={70}
-          className=' h-16 w-fit md:ml-12'
+          className=' h-14 w-fit ml-10'
           alt='Ideal namjestaj'
         />
-        <h1 className='text-[#fff] text-3xl mr-auto pl-4' >I<span className='text-orange'>DEAL</span></h1>
+        <h1 className='text-[#fff] text-3xl mr-auto pl-2' >I<span className='text-orange'>DEAL</span></h1>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
        className={ menu ? 'hidden' : 'block' && "w-6 h-6 text-[#fff] md:hidden"} onClick={() => setMenu(!menu)}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

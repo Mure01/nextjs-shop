@@ -6,10 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "tailwind:build": "npx tailwindcss build ./styles/tailwind.css -o ./styles/tailwind.output.css"
-
-
+    "lint": "next lint"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
