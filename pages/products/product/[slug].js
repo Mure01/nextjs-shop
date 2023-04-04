@@ -2,13 +2,19 @@ import React from 'react'
 import { urlFor, client } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
 import Product from '@/components/product'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 
 const ProductDetails = ({product, products}) => {
   const {image, name, details, productKind, price, slug} = product
   const [index, setIndex] = useState(0)
+  let brojac = 0
+  products.map(product => (
+    ( product.productKind === productKind && product.slug.current !== slug.current ? brojac+=1 : brojac
+    )
+    ))
+
   return (
     <div>
       <div className=' p-4 space-y-4  md:flex md:p-10 md:space-x-10'>
@@ -18,10 +24,10 @@ const ProductDetails = ({product, products}) => {
         alt='glavna slika' 
         width={300}
         height={300}
-        className=' w-70 h-fit'
+        className=' w-full h-fit md:w-96'
         unoptimized={true} 
         />
-      <div className='flex space-x-5 pt-5 flex-wrap justify-start space-y-4 items-baseline'>
+      <div className='flex space-x-5 flex-wrap justify-start space-y-4 items-baseline md:pt-3'>
         {
           image.map((img, i) => (
             <a onClick={() => setIndex(i)} key={i}>
@@ -30,7 +36,7 @@ const ProductDetails = ({product, products}) => {
                 src={urlFor(img).url()}
                 height={70}
                 width={70}
-                className=' h-20 w-fit hover:cursor-pointer '
+                className=' h-24 w-fit hover:cursor-pointer '
                 unoptimized={true}
               />
             </a>
@@ -44,14 +50,13 @@ const ProductDetails = ({product, products}) => {
       <h3>{price} KM</h3>
       </div>
       </div>
-        <h1 className = ' text-center uppercase text-lg p-4'>Slični proizvodi</h1>
+       {brojac > 0 ?   <h1 className = ' text-center uppercase text-lg p-4'>Slični proizvodi</h1> : ''}
         <div className ='w-full flex flex-wrap justify-center space-y-7 lg:gap-5 items-baseline'>
     {
+      brojac > 0 &&
       products.map(product => (
         ( product.productKind === productKind && product.slug.current !== slug.current &&
-          <div  key={product.slug.current} >
-            <Product product={product}/> 
-          </div>
+            <Product product={product} key={product.slug.current}/> 
         )
         ))
       }
