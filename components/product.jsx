@@ -6,7 +6,7 @@ const Product = ({product: {image, name, slug, details, price} }) => {
   return (
     <div>
       <Link href={`/products/product/${slug.current}`} >
-        <div className=' shadow-2xl p-2 '>
+        <div className=' shadow-2xl p-2 bg-[#fff]'>
         <Image
           src={urlFor(image && image[0]).url()}
           alt="opis"
