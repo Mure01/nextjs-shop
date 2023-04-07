@@ -18,8 +18,8 @@ const ProductDetails = ({product, products}) => {
   return (
     <div>
       
-      <div className='space-y-4 w-5/6 m-auto   md:flex md:p-10 md:space-x-10'>
-      <div className='slug-photo mr-10'>
+      <div className='space-y-4 w-full md:w-5/6 m-auto   md:flex md:p-10 md:space-x-10'>
+      <div className='slug-photo md:mr-10'>
       <Image
        src={urlFor(image[index]).url()}
         alt='glavna slika' 
@@ -58,10 +58,11 @@ const ProductDetails = ({product, products}) => {
       </div>
       </div>
        {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl p-4 font-medium'>Slični proizvodi</h1> : ''}
-        <div className ='w-full flex flex-wrap justify-center space-y-7 lg:gap-5 items-baseline'>
+      <div className ='w-full flex snap-mandatory justify-start overflow-scroll pl-12 md:justify-center no-scrollbar mb-7 space-y-7 lg:gap-5 items-baseline'>
+
     {
       brojac > 0 &&
-      products.map(product => (
+      products.slice(0,6).map(product => (
         ( product.productKind === productKind && product.slug.current !== slug.current &&
             <Product product={product} key={product.slug.current}/> 
         )
