@@ -17,17 +17,18 @@ const ProductDetails = ({product, products}) => {
 
   return (
     <div>
-      <div className=' p-4 space-y-4  md:flex md:p-10 md:space-x-10'>
-      <div className='slug-photo'>
+      
+      <div className='space-y-4 w-5/6 m-auto   md:flex md:p-10 md:space-x-10'>
+      <div className='slug-photo mr-10'>
       <Image
        src={urlFor(image[index]).url()}
         alt='glavna slika' 
         width={300}
         height={300}
-        className=' w-full h-fit md:w-96'
+        className=' w-full h-fit md:h-[450px] md:w-fit pb-3'
         unoptimized={true} 
         />
-      <div className='flex space-x-5 flex-wrap justify-start space-y-4 items-baseline md:pt-3'>
+      <div className='flex space-x-5 flex-wrap pl-3 justify-start space-y-4 items-baseline'>
         {
           image.map((img, i) => (
             <a onClick={() => setIndex(i)} key={i}>
@@ -44,13 +45,19 @@ const ProductDetails = ({product, products}) => {
           }
           </div>
       </div>
-      <div>
-      <h1>{name}</h1>
+      <div className='md:h-[420px] p-4 md:p-0 relative'>
+      <h1 className=' text-3xl font-medium pb-3'>{name}</h1>
       <p>{details}</p>
-      <h3>{price} KM</h3>
+      <div className='md:absolute bottom-0 right-0'>
+      <h3 className='uppercase text-xl font-normal pt-8 pb-4'> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
+      { price ? '' : <h4>Da biste saznali cijenu ovog proizvoda molimo Vas, pošaljite upit!</h4>}
+      <button className=' bg-background text-[#fff] p-4 rounded-xl text'>
+        POŠALJITE UPIT
+      </button>
       </div>
       </div>
-       {brojac > 0 ?   <h1 className = ' text-center uppercase text-lg p-4'>Slični proizvodi</h1> : ''}
+      </div>
+       {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl p-4 font-medium'>Slični proizvodi</h1> : ''}
         <div className ='w-full flex flex-wrap justify-center space-y-7 lg:gap-5 items-baseline'>
     {
       brojac > 0 &&
