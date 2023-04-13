@@ -4,6 +4,7 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-i
 import Product from '@/components/product'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 const ProductDetails = ({product, products}) => {
@@ -51,9 +52,9 @@ const ProductDetails = ({product, products}) => {
       <div className='md:absolute bottom-0 right-0'>
       <h3 className='uppercase text-xl font-normal pt-8 pb-4'> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
       { price ? '' : <h4>Da biste saznali cijenu ovog proizvoda molimo Vas, pošaljite upit!</h4>}
-      <button className=' bg-background text-[#fff] p-4 rounded-xl text'>
+      <Link href="buyform" className=' bg-background text-[#fff] p-4 rounded-xl text'>
         POŠALJITE UPIT
-      </button>
+      </Link>
       </div>
       </div>
       </div>

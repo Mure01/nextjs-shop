@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.5.5",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.17",
     "@material-tailwind/react": "^1.4.2",
@@ -17,9 +18,11 @@
     "daisyui": "^2.51.5",
     "next": "13.2.4",
     "next-sanity": "^4.1.6",
+    "nodemailer": "^6.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-toastify": "^9.1.2",
     "tailwind": "^4.0.0"
   },
   "devDependencies": {
