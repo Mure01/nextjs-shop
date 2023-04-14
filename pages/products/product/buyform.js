@@ -56,15 +56,19 @@ import {
     };
   
     return (
-      <Container  className=" flex flex-col items-center mt-8">
-        <Heading className=" text-3xl">IDEAL narudžba</Heading>
+<Container className="flex flex-wrap">
+      <Heading className=" text-3xl w-full text-center uppercase font-semibold pt-5">IDEAL narudžba</Heading>
+  <div className=" w-full md:w-1/2">
+    TEXT OPISA I NAPOMENA
+  </div>
+<Container  className=" flex flex-col w-full items-start pl-11 md:w-1/2 mt-8">
         {error && (
           <Text color="red.300" my={4} className="text-[red]" fontSize="xl">
             {error}
           </Text>
         )}
   
-        <FormControl isRequired isInvalid={touched.name && !values.name} mb={5}>
+        <FormControl isRequired isInvalid={touched.name && !values.name} mb={10} className="w-10/12 space-y-1 md:w-1/2">
           <FormLabel>Ime i prezime</FormLabel>
           <Input
             type="text"
@@ -73,11 +77,13 @@ import {
             value={values.name}
             onChange={handleChange}
             onBlur={onBlur}
-          />
+            placeholder="Ime Prezime"
+            className=" border rounded-lg border-[#bdd]  w-full	m-auto pt-1 pb-1 pl-2 "
+            />
           <FormErrorMessage className="text-[red]">*Obavezan unos</FormErrorMessage>
         </FormControl>
   
-        <FormControl isRequired isInvalid={touched.email && !values.email} mb={5}>
+        <FormControl isRequired isInvalid={touched.email && !values.email} mb={5} className="w-10/12 space-y-1 md:w-1/2">
           <FormLabel>Email</FormLabel>
           <Input
             type="email"
@@ -86,6 +92,8 @@ import {
             value={values.email}
             onChange={handleChange}
             onBlur={onBlur}
+            placeholder="mail@example.com"
+            className=" border rounded-lg border-[#bdd] w-full	 pt-1 pb-1 pl-2 "
           />
           <FormErrorMessage className="text-[red]" >*Obavezan unos</FormErrorMessage>
         </FormControl>
@@ -94,7 +102,8 @@ import {
           mb={5}
           isRequired
           isInvalid={touched.subject && !values.subject}
-        >
+          className="w-10/12 space-y-1 md:w-1/2"
+          >
           <FormLabel>Naslov</FormLabel>
           <Input
             type="text"
@@ -103,7 +112,9 @@ import {
             value={values.subject}
             onChange={handleChange}
             onBlur={onBlur}
-          />
+            placeholder="Naslov"
+            className=" border rounded-lg border-[#bdd]  w-full	 pt-1 pb-1 pl-2 "
+            />
           <FormErrorMessage className="text-[red]" >*Obavezan unos</FormErrorMessage>
         </FormControl>
 
@@ -114,7 +125,8 @@ import {
           mb={5}
           isRequired
           isInvalid={touched.artikal && !values.artikal}
-        >
+          className="w-10/12 space-y-1 md:w-1/2"
+          >
           <FormLabel>Novi objekat</FormLabel>
           <Input
             type="text" 
@@ -123,7 +135,9 @@ import {
             value={values.artikal}
             onChange={handleChange}
             onBlur={onBlur}
-          />
+            placeholder="Naziv artikla"
+            className=" border rounded-lg border-[#bdd]  w-full	 pt-1 pb-1 pl-2 "
+            />
           <FormErrorMessage className="text-[red]">*Obavezan unos</FormErrorMessage>
         </FormControl>
   
@@ -135,7 +149,8 @@ import {
           isRequired
           isInvalid={touched.message && !values.message}
           mb={5}
-        >
+          className="w-10/12 space-y-1 md:w-1/2"
+          >
           <FormLabel>Poruka</FormLabel>
           <Textarea
             type="text"
@@ -145,7 +160,9 @@ import {
             value={values.message}
             onChange={handleChange}
             onBlur={onBlur}
-          />
+            placeholder="Vaša poruka"
+            className=" border rounded-lg border-[#bdd]  w-full	 pt-1 pb-1 pl-2 "
+            />
           <FormErrorMessage className=" text-[red]">*Obavezan unos</FormErrorMessage>
         </FormControl>
   
@@ -157,11 +174,13 @@ import {
             !values.name || !values.email || !values.subject || !values.message
           }
           onClick={onSubmit}
-        >
-          Naruči
+          className=" bg-background p-3 text-[#fff] uppercase text-xl pl-7 pr-7 w-10/12 m-auto md:m-0 md:w-1/4 md:ml-[25%] rounded-lg"
+          >
+          Naručite
         </Button>
         {sended && <h1 className="text-[green]">Uspjesno ste poslali poruku</h1>}
       </Container>
+          </Container>
     );
   }
   

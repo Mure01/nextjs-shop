@@ -19,14 +19,15 @@ const ProductDetails = ({product, products}) => {
   return (
     <div>
       
-      <div className='space-y-4 w-full md:w-5/6 m-auto   md:flex md:p-10 md:space-x-10'>
-      <div className='slug-photo md:mr-10'>
+      <div className='space-y-4 w-full md:w-5/6 m-auto md:flex md:p-10 md:space-x-10'>
+      
+      <div className='slug-photo flex flex-col md:items-center md:w-2/5 '>
       <Image
        src={urlFor(image[index]).url()}
         alt='glavna slika' 
         width={300}
         height={300}
-        className=' w-full h-fit md:h-[450px] md:w-fit pb-3'
+        className=' w-full h-fit md:h-[450px] md:w-fit  pb-3'
         unoptimized={true} 
         />
       <div className='flex space-x-5 flex-wrap pl-3 justify-start space-y-4 items-baseline'>
@@ -46,11 +47,30 @@ const ProductDetails = ({product, products}) => {
           }
           </div>
       </div>
-      <div className='md:h-[420px] p-4 md:p-0 relative'>
-      <h1 className=' text-3xl font-medium pb-3'>{name}</h1>
-      <p>{details}</p>
-      <div className='md:absolute bottom-0 right-0'>
-      <h3 className='uppercase text-xl font-normal pt-8 pb-4'> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
+
+      <div className=' md:h-[420px] p-5 md:w-3/5 md:border-l md:pl-10  text-justify  md:pr-14 relative'>
+      
+      <h1 className=' text-3xl font-medium pb-3'>{name} </h1>
+      <p className='pb-6'>{details}</p>
+      <div className='flex flex-wrap'>
+
+      <p className='pb-2'>MATERIJALI ZA IZRADU: </p>
+          <ul className=' list-disc pl-10'>
+            <li>Iverica</li>
+            <li>Medijapan</li>
+            <li>Puno drvo</li>
+          </ul>
+      </div>
+
+      <p className='flex items-center space-x-2'>
+        <span>BOJE: </span>
+        <span className='dot bg-[#000]'></span>
+        <span className='dot bg-[#ddd]'></span>
+        <span className='dot bg-[#5f9]'></span>
+         </p>
+
+      <div className='md:absolute md:pr-14 bottom-0 left-0 md:pl-10 '>
+      <h3 className='uppercase text-xl font-normal pt-8 pb-10'> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
       { price ? '' : <h4>Da biste saznali cijenu ovog proizvoda molimo Vas, pošaljite upit!</h4>}
       <Link href="buyform" className=' bg-background text-[#fff] p-4 rounded-xl text'>
         POŠALJITE UPIT
