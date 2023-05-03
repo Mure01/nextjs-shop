@@ -47,7 +47,7 @@ const Navbar = () => {
 </svg>
 
       </li> 
-          <div className={dropDown ? 'flex flex-col gap-2 text-left ml-[60%] translate-x-[-40%]' : 'hidden'}>
+          <div className={dropDown ? 'flex flex-col gap-2 z-10 text-left ml-[60%] translate-x-[-40%]' : 'hidden'}>
             <Link href='/products/kuhinja'>
               <li onClick={() => setMenu(false)} className={router.pathname == "/products/kuhinja" ? "text-[#e8491d]" : ""}> Kuhinje</li></Link>
             <Link href='/products/ormar' className={router.pathname == "/products/ormar" ? "text-[#e8491d]" : ""}><li onClick={() => setMenu(false)}> Ormari</li></Link>

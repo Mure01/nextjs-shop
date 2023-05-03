@@ -1,7 +1,7 @@
 import React from 'react'
 import { urlFor, client } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
-import Product from '@/components/product'
+import Product from '@/components/Product'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -19,7 +19,7 @@ const ProductDetails = ({product, products}) => {
   return (
     <div>
       
-      <div className='space-y-4 w-full md:w-5/6 m-auto md:flex md:p-10 md:space-x-10'>
+      <div className='space-y-4 w-full md:w-[100%] lg:w-5/6 m-auto md:flex md:p-10 md:space-x-10'>
       
       <div className='slug-photo flex flex-col md:items-center md:w-2/5 '>
       <Image
@@ -48,7 +48,7 @@ const ProductDetails = ({product, products}) => {
           </div>
       </div>
 
-      <div className=' md:h-[420px] p-5 md:w-3/5 md:border-l md:pl-10  text-justify  md:pr-14 relative'>
+      <div className=' md:min-h-[420px] p-5 md:w-3/5 md:border-l md:pl-10 pt-0  text-justify  md:pr-0 lg:pr-12 relative'>
       
       <h1 className=' text-3xl font-medium pb-3'>{name} </h1>
       <p className='pb-6'>{details}</p>
@@ -69,10 +69,11 @@ const ProductDetails = ({product, products}) => {
         <span className='dot bg-[#5f9]'></span>
          </p>
 
-      <div className='md:absolute md:pr-14 bottom-0 left-0 md:pl-10 '>
-      <h3 className='uppercase text-xl font-normal pt-8 pb-10'> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
-      { price ? '' : <h4>Da biste saznali cijenu ovog proizvoda molimo Vas, pošaljite upit!</h4>}
-      <Link href="buyform" className=' bg-background text-[#fff] p-4 rounded-xl text'>
+      <div className='md:absolute md:pr-14 bottom-0 flex flex-col space-y-5 left-0 md:pl-10 '>
+      <h3 className='uppercase text-xl font-normal '> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
+      { price ? <h4>Da biste naručili ili saznali detalje o proizvodu molimo Vas, pošaljite upit!</h4> :
+       <h4 className=''>Da biste naručili ili saznali cijenu ovog proizvoda molimo Vas, pošaljite upit!</h4>}
+      <Link href="buyform" className=' bg-background text-[#fff] p-4 md:w-44 text-center rounded-xl text'>
         POŠALJITE UPIT
       </Link>
       </div>
@@ -83,7 +84,7 @@ const ProductDetails = ({product, products}) => {
 
     {
       brojac > 0 &&
-      products.slice(0,6).map(product => (
+      products.map(product => (
         ( product.productKind === productKind && product.slug.current !== slug.current &&
             <Product product={product} key={product.slug.current}/> 
         )

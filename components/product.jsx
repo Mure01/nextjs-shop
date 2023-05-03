@@ -17,7 +17,7 @@ const Product = ({product: {image, name, slug, details, price} }) => {
           />
           <p className=' uppercase text-center pt-2 pb-2 font-medium text-xl' >{name}</p>
           <p className=' w-56 mb-2 text-justify p-1 overflow-hidden whitespace-wrap line-clamp-2 text-ellipsis' >{details}</p>
-          <p className='w-full bg-background p-2 text-center text-[#fff] uppercase'>Cijena: {price} KM</p>
+          <p className='w-full bg-background p-2 text-center text-[#fff] uppercase'>Cijena: {price ?<> {price} KM</> : "Po dogovoru"}</p>
         </div>
       </Link>
     </div>

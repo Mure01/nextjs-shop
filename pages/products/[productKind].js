@@ -1,6 +1,6 @@
 import React from 'react'
 import { client } from '@/lib/client'
-import Product from '@/components/product'
+import Product from '@/components/Product'
 
 const ProductsList = ({products}) => {
     return (
