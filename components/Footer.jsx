@@ -4,9 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { AiFillClockCircle, AiFillCopy, AiFillFacebook, AiFillInstagram, AiFillSchedule, AiFillSecurityScan } from 'react-icons/ai'
 
-const Footer = () => {
-  const copyright = String.fromCodePoint(0x00A9);
 
+const Footer = () => {
+
+  const copyright = String.fromCodePoint(0x00A9);
   const datum = new Date();
   const godina = datum.getFullYear();
 

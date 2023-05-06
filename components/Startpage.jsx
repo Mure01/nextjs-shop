@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Product from './Product'
 import Image from 'next/image'
 import Link from 'next/link'
 import ponuda from '../public/ponuda.jpg'
 
 const Startpage = ({products, children}) => {
+
+
   return (
-    <div>
+    <div>  
 
     <div className=' flex w-full flex-wrap justify-center md:h-[45vh] items-center'>
       <h1 className='md:w-2/5 text-center text-4xl font-medium pt-10 md:pt-0 flex flex-wrap justify-center leading-relaxed'>IDEALAN NAMJEŠTAJ ZA <br className=' hidden md:block'></br>VAŠ DOM</h1>

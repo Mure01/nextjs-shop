@@ -5,12 +5,17 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 
 const Navbar = () => {
+
   const router = useRouter()
   const [menu, setMenu] = React.useState(false)
   const [dropDown, setDropDown] = React.useState(false)
   const [dropDownMd, setDropDownMd] = React.useState(false)
+
+
   return (
+
       <nav className= 'bg-background box-border flex relative items-center p-4 justify-between'> 
+
         <Link href='/' >
         <Image
           src={logo}
@@ -20,9 +25,11 @@ const Navbar = () => {
           alt='Ideal namjestaj'
           />
           </Link>
+
        <Link href='/' className='mr-auto'>
         <h1 className='text-[#fff] text-3xl mr-auto pl-2' >I<span className='text-orange'>DEAL</span></h1>
        </Link>
+       
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
        className={ menu ? 'hidden' : 'block' && "w-6 h-6 text-[#fff] md:hidden"} onClick={() => setMenu(!menu)}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
