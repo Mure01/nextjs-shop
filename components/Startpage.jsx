@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import Product from './Product'
 import Image from 'next/image'
 import Link from 'next/link'
 import ponuda from '../public/ponuda.jpg'
 
-const Startpage = ({products, children}) => {
+const Startpage = ({children}) => {
 
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { urlFor, client } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
-import Product from '@/components/Product'
+import { Product } from '@/components'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
