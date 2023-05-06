@@ -1,6 +1,5 @@
 import React from 'react'
 import { client } from '@/lib/client'
-import Router from 'next/router'
 
 import { Banner, Newsletter, Recomended, Startpage, Services } from '@/components'
 
