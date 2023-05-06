@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
 const ProductDetails = ({product, products}) => {
   const {image, name, details, productKind, price, slug} = product
   const [index, setIndex] = useState(0)
