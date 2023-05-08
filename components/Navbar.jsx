@@ -87,10 +87,10 @@ const Navbar = () => {
            }
                </div>
             </div>
-          <Link href='/'>
+          <Link href='/about'>
             <li onClick={() => setMenu(false)} className={router.pathname == "/about" ? "text-[#e8491d]" : ""}>O nama</li>
           </Link>
-          <Link href='/'>
+          <Link href='/contact'>
             <li onClick={() => setMenu(false)} className={router.pathname == "/components/contact" ? "text-[#e8491d]" : ""}>Kontakt</li>
           </Link>
         </ul>
