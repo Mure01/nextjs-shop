@@ -1,6 +1,5 @@
 import React from 'react'
-import { Product } from '.'
-
+import Product from './Product'
 const Recomended = ({products}) => {
   return (
     <div>
