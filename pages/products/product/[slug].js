@@ -5,6 +5,7 @@ import { Product } from '@/components'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Buyform from './buyform'
 
 const ProductDetails = ({product, products}) => {
   const {image, name, details, productKind, price, slug} = product
@@ -14,12 +15,17 @@ const ProductDetails = ({product, products}) => {
     ( product.productKind === productKind && product.slug.current !== slug.current ? brojac+=1 : brojac
     )
     ))
-
+  const [form, setForm] = useState(false) 
   return (
     <div>
       
       <div className='space-y-4 w-full md:w-[100%] lg:w-5/6 m-auto md:flex md:p-10 md:space-x-10'>
-      
+        <div className=' hidden md:block'>
+
+      {form && <Buyform/>}
+        </div>
+      {
+        !form && 
       <div className='slug-photo flex flex-col md:items-center md:w-2/5 '>
       <Image
        src={urlFor(image[index]).url()}
@@ -46,6 +52,8 @@ const ProductDetails = ({product, products}) => {
           }
           </div>
       </div>
+}
+
 
       <div className=' md:min-h-[420px] p-5 md:w-3/5 md:border-l md:pl-10 pt-0  text-justify  md:pr-0 lg:pr-12 relative'>
       
@@ -72,12 +80,18 @@ const ProductDetails = ({product, products}) => {
       <h3 className='uppercase text-xl font-normal '> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
       { price ? <h4>Da biste naručili ili saznali detalje o proizvodu molimo Vas, pošaljite upit!</h4> :
        <h4 className=''>Da biste naručili ili saznali cijenu ovog proizvoda molimo Vas, pošaljite upit!</h4>}
-      <Link href="buyform" className=' bg-background text-[#fff] p-4 md:w-44 text-center rounded-xl text'>
-        POŠALJITE UPIT
-      </Link>
+      <button
+      onClick={() => setForm(!form)}
+      className=' bg-background text-[#fff] p-4 md:w-44 text-center rounded-xl text'>
+        {form ?  "PONIŠTITE NARUDŽBU" : "POŠALJITE UPIT" }
+      </button>
       </div>
       </div>
       </div>
+      <div className=' block md:hidden'>
+
+{form && <Buyform/>}
+  </div>
        {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl p-4 font-medium'>Slični proizvodi</h1> : ''}
       <div className ='w-full flex snap-mandatory justify-start overflow-scroll pl-12 md:justify-center no-scrollbar mb-7 space-y-7 lg:gap-5 items-baseline'>
 

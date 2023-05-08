@@ -6,6 +6,27 @@ import { useRouter } from 'next/router';
 
 const Navbar = () => {
 
+  const productKinds = [
+    {
+      name: 'Kuhinje',
+      link: '/kuhinja',
+    },
+    {
+      name: 'Ormari',
+      link: '/ormar',
+    },
+    {
+      name: 'Predsoblja',
+      link: '/predsoblje',
+    },
+    {
+      name: 'Stolovi',
+      link: '/predsoblje',
+    },
+  ]
+
+
+
   const router = useRouter()
   const [menu, setMenu] = React.useState(false)
   const [dropDown, setDropDown] = React.useState(false)
@@ -55,14 +76,19 @@ const Navbar = () => {
 
       </li> 
           <div className={dropDown ? 'flex flex-col gap-2 z-10 text-left ml-[60%] translate-x-[-40%]' : 'hidden'}>
-            <Link href='/products/kuhinja'>
-              <li onClick={() => setMenu(false)} className={router.pathname == "/products/kuhinja" ? "text-[#e8491d]" : ""}> Kuhinje</li></Link>
-            <Link href='/products/ormar' className={router.pathname == "/products/ormar" ? "text-[#e8491d]" : ""}><li onClick={() => setMenu(false)}> Ormari</li></Link>
-            <Link href='/products/predsoblje'><li onClick={() => setMenu(false)} className={router.pathname == "/products/predsoblja" ? "text-[#e8491d]" : ""}> Predsoblja</li></Link>
-          </div>
+          {
+            productKinds.map((product)=> {
+              return (
+                <Link href={`/products/${product.link}`} key={product.name}>
+                  <li onClick={() =>{ setMenu(false); setDropDown(false)}} className={router.pathname == `/products/${product.link}`? "text-[#e8491d]" : ""}> {product.name}</li>
+                </Link>
+              )
+            })
+           }
+               </div>
             </div>
           <Link href='/'>
-            <li onClick={() => setMenu(false)} className={router.pathname == "/components/about" ? "text-[#e8491d]" : ""}>O nama</li>
+            <li onClick={() => setMenu(false)} className={router.pathname == "/about" ? "text-[#e8491d]" : ""}>O nama</li>
           </Link>
           <Link href='/'>
             <li onClick={() => setMenu(false)} className={router.pathname == "/components/contact" ? "text-[#e8491d]" : ""}>Kontakt</li>
@@ -80,16 +106,22 @@ const Navbar = () => {
   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg></li>
           <div className={dropDownMd ? 'flex flex-col gap-2 absolute bg-background p-4 top-12 w-max' : 'hidden'}>
-            <Link href='/products/kuhinja'><li onClick={() => setDropDownMd(false)} className={router.pathname == "/products/kuhinja" ? "text-[#e8491d]" : ""}> Kuhinje</li></Link>
-            <Link href='/products/ormar'><li onClick={() => setDropDownMd(false)} className={router.pathname == "/products/ormar" ? "text-[#e8491d]" : ""}> Ormari</li></Link>
-            <Link href='/products/predsoblje'><li onClick={() => setDropDownMd(false)} className={router.pathname == "/products/predsoblje" ? "text-[#e8491d]" : ""}> Predsoblja</li></Link>
+           {
+            productKinds.map((product)=> {
+              return (
+                <Link href={`/products/${product.link}`} key={product.name}>
+                  <li onClick={() => setDropDownMd(false)} className={router.pathname == `/products/${product.link}`? "text-[#e8491d]" : ""}> {product.name}</li>
+                </Link>
+              )
+            })
+           }
           </div>
           </div>
-          <Link href='/'>
-            <li onClick={() => setDropDownMd(false)} className={router.pathname == "/components/about" ? "text-[#e8491d]" : ""}>O nama</li>
+          <Link href='/about'>
+            <li onClick={() => setDropDownMd(false)} className={router.pathname == "/about" ? "text-[#e8491d]" : ""}> O nama</li>
           </Link>
-          <Link href='/'>
-            <li onClick={() => setDropDownMd(false)} className={router.pathname == "/components/contact" ? "text-[#e8491d]" : ""}>Kontakt</li>
+          <Link href='/contact'>
+            <li onClick={() => setDropDownMd(false)} className={router.pathname == "/contact" ? "text-[#e8491d]" : ""}>Kontakt</li>
           </Link>
         </ul>
       </nav>

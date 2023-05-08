@@ -16,7 +16,7 @@ import {
   
   const initState = { isLoading: false, error: "", values: initValues };
   
-  export default function Home() {
+  export default function Buyform() {
     const [state, setState] = useState(initState);
     const [touched, setTouched] = useState({});
     const [sended, setSended] = useState(false);
@@ -58,17 +58,14 @@ import {
     return (
 <Container className="flex flex-wrap">
       <Heading className=" text-3xl w-full text-center uppercase font-semibold pt-5">IDEAL narudžba</Heading>
-  <div className=" w-full md:w-1/2">
-    TEXT OPISA I NAPOMENA
-  </div>
-<Container  className=" flex flex-col w-full items-start pl-11 md:w-1/2 mt-8">
+<Container  className=" flex flex-col w-full items-start pl-11  mt-8">
         {error && (
           <Text color="red.300" my={4} className="text-[red]" fontSize="xl">
             {error}
           </Text>
         )}
   
-        <FormControl isRequired isInvalid={touched.name && !values.name} mb={10} className="w-10/12 space-y-1 md:w-1/2">
+        <FormControl isRequired isInvalid={touched.name && !values.name} mb={10} className="w-10/12 space-y-1 ">
           <FormLabel>Ime i prezime</FormLabel>
           <Input
             type="text"
@@ -83,7 +80,7 @@ import {
           <FormErrorMessage className="text-[red]">*Obavezan unos</FormErrorMessage>
         </FormControl>
   
-        <FormControl isRequired isInvalid={touched.email && !values.email} mb={5} className="w-10/12 space-y-1 md:w-1/2">
+        <FormControl isRequired isInvalid={touched.email && !values.email} mb={5} className="w-10/12 space-y-1 ">
           <FormLabel>Email</FormLabel>
           <Input
             type="email"
@@ -102,7 +99,7 @@ import {
           mb={5}
           isRequired
           isInvalid={touched.subject && !values.subject}
-          className="w-10/12 space-y-1 md:w-1/2"
+          className="w-10/12 space-y-1 "
           >
           <FormLabel>Naslov</FormLabel>
           <Input
@@ -125,7 +122,7 @@ import {
           mb={5}
           isRequired
           isInvalid={touched.artikal && !values.artikal}
-          className="w-10/12 space-y-1 md:w-1/2"
+          className="w-10/12 space-y-1 "
           >
           <FormLabel>Novi objekat</FormLabel>
           <Input
@@ -149,7 +146,7 @@ import {
           isRequired
           isInvalid={touched.message && !values.message}
           mb={5}
-          className="w-10/12 space-y-1 md:w-1/2"
+          className="w-10/12 space-y-1 "
           >
           <FormLabel>Poruka</FormLabel>
           <Textarea
@@ -174,7 +171,7 @@ import {
             !values.name || !values.email || !values.subject || !values.message
           }
           onClick={onSubmit}
-          className=" bg-background p-3 text-[#fff] uppercase text-xl pl-7 pr-7 w-10/12 m-auto md:m-0 md:w-1/4 md:ml-[25%] rounded-lg"
+          className=" bg-background p-3 text-[#fff] uppercase text-xl pl-7 pr-7 w-10/12 m-0 md:w-1/4 md:px-20 rounded-lg"
           >
           Naručite
         </Button>
