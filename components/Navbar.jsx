@@ -48,7 +48,7 @@ const Navbar = () => {
           </Link>
 
        <Link href='/' className='mr-auto'>
-        <h1 className='text-[#fff] text-3xl mr-auto pl-2' >I<span className='text-orange'>DEAL</span></h1>
+        <h1 className='text-[#fff] text-3xl mr-auto pl-2' >i<span className='text-org'>DEAL</span></h1>
        </Link>
        
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"

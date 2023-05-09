@@ -69,7 +69,7 @@ const ProductDetails = ({product, products}) => {
           </ul>
       </div>
 
-      <p className='flex items-center space-x-2'>
+      <p className='flex items-center space-x-2 my-3'>
         <span>BOJE: </span>
         <span className='dot bg-[#000]'></span>
         <span className='dot bg-[#ddd]'></span>
@@ -77,7 +77,7 @@ const ProductDetails = ({product, products}) => {
          </p>
 
       <div className='md:absolute md:pr-14 bottom-0 flex flex-col space-y-5 left-0 md:pl-10 '>
-      <h3 className='uppercase text-xl font-normal '> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
+      <h3 className='uppercase text-xl font-normal  '> CIJENa : {price? price +" KM": "Cijena na upit"}</h3>
       { price ? <h4>Da biste naručili ili saznali detalje o proizvodu molimo Vas, pošaljite upit!</h4> :
        <h4 className=''>Da biste naručili ili saznali cijenu ovog proizvoda molimo Vas, pošaljite upit!</h4>}
       <button
@@ -93,7 +93,7 @@ const ProductDetails = ({product, products}) => {
 {form && <Buyform/>}
   </div>
        {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl p-4 font-medium'>Slični proizvodi</h1> : ''}
-      <div className ='w-full flex snap-mandatory justify-start overflow-scroll pl-12 md:justify-center no-scrollbar mb-7 space-y-7 lg:gap-5 items-baseline'>
+      <div className ='w-full flex snap-mandatory justify-start overflow-scroll pl-12 pr-12 gap-5 md:justify-center no-scrollbar mb-7 space-y-7 lg:gap-5 items-baseline'>
 
     {
       brojac > 0 &&

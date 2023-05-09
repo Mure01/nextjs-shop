@@ -9,7 +9,7 @@ const Startpage = ({children}) => {
   return (
     <div>  
 
-    <div className=' flex w-full flex-wrap justify-center md:h-[45vh] items-center'>
+    <div className=' flex w-full flex-wrap justify-center lg:h-[45vh] items-center'>
       <h1 className='md:w-2/5 text-center text-4xl font-medium pt-10 md:pt-0 flex flex-wrap justify-center leading-relaxed'>IDEALAN NAMJEŠTAJ ZA <br className=' hidden md:block'></br>VAŠ DOM</h1>
       <div className='md:w-3/5 text-justify p-5 md:p-10 text-xl'>
         <p className=' md:w-4/5 md:pl-10 m-auto'>Uz kuhinje modernog dizajna i visoke kvalitete, opremamo apartmane i montiramo namještaj za poslovne prostore,
