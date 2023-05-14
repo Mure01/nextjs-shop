@@ -13,7 +13,7 @@ import { useState } from "react";
 import { sendKontaktForm } from "../lib/api";
 import Head from "next/head";
 import { Services } from ".";
-import { AiFillEnvironment, AiFillPhone, AiFillRedEnvelope } from "react-icons/ai";
+import { AiFillEnvironment } from "react-icons/ai";
 import Link from "next/link";
 const initValues = { name: "", email: "", subject: "", message: "" };
 

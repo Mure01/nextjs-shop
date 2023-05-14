@@ -2,13 +2,11 @@ import React from 'react'
 import { client } from '@/lib/client'
 import Head from 'next/head'
 import { Banner, Newsletter, Recomended, Startpage, Services } from '@/components'
-import fav from '../public/favicon.ico'
 const Home = ({products}) => {
 return (
 <>
     <Head>
       <title>Ideal namještaj</title>
-      <link rel="icon" href={fav} />
     </Head>
     <Banner/>   
     <Newsletter/>

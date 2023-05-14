@@ -14,7 +14,6 @@ const About = () => {
     <div>
       <Head>
               <title>O nama - Ideal namještaj</title>
-              <link rel="icon" href={favicon} />
             </Head>
       <div className=' h-96 relative'>
         <Image
