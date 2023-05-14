@@ -2,6 +2,7 @@ import React from 'react'
 import { Newsletter, Services } from '.'
 import Head from 'next/head'
 import favicon from '../public/favicon.ico'
+import slika from '../public/logo.jpg'
 import pozadina from '../public/o_nama_pozadina.jpg'
 import { AiFillEye, AiFillDropboxCircle } from 'react-icons/ai'
 import Image from 'next/image'
@@ -24,7 +25,7 @@ const About = () => {
         unoptimized={true} 
         className='w-full h-full object-cover'
         />
-        <h1 className='text-center md:text-3xl absolute bottom-32  lg:bottom-20 text-[#fff] font-medium w-full left-1/2 -translate-x-1/2'>2018 - O NAMA - {godina}</h1>
+        <h1 className='text-center text-2xl md:text-3xl absolute bottom-32  lg:bottom-20 text-[#fff] font-medium w-full left-1/2 -translate-x-1/2'>2018 - O NAMA - {godina}</h1>
       </div>
       <div className=' h-80 items-center bg-background flex flex-wrap'>
         <div className=' w-full md:w-1/2 px-5 md:px-16 text-justify
@@ -39,7 +40,7 @@ const About = () => {
         </div>
         <div className='w-full md:w-1/2'>
           <Image
-          src={favicon}
+          src={slika.src}
           width = {100}
           height = {100}
           alt='logo'
