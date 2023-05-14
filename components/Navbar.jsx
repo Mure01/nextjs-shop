@@ -48,7 +48,7 @@ const Navbar = () => {
           </Link>
 
        <Link href='/' className='mr-auto'>
-        <h1 className='text-[#fff] text-3xl mr-auto pl-2' >i<span className='text-org'>DEAL</span></h1>
+        <h1 className='text-[#fff] text-3xl mr-auto pl-2 tracking-widest ' >i<span className='text-org'>DEAL</span></h1>
        </Link>
        
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
@@ -75,7 +75,7 @@ const Navbar = () => {
 </svg>
 
       </li> 
-          <div className={dropDown ? 'flex flex-col gap-2 z-10 text-left ml-[60%] translate-x-[-40%]' : 'hidden'}>
+          <div className={dropDown ? 'flex flex-col gap-2 z-100 text-left ml-[60%] translate-x-[-40%]' : 'hidden'}>
           {
             productKinds.map((product)=> {
               return (
@@ -105,7 +105,7 @@ const Navbar = () => {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 ">
   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg></li>
-          <div className={dropDownMd ? 'flex flex-col gap-2 absolute bg-background p-4 top-12 w-max' : 'hidden'}>
+          <div className={dropDownMd ? 'flex flex-col gap-2 absolute z-50 bg-background p-4 top-12 w-max' : 'hidden'}>
            {
             productKinds.map((product)=> {
               return (
