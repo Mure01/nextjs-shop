@@ -1,7 +1,6 @@
 import React from 'react'
 import { Newsletter, Services } from '.'
 import Head from 'next/head'
-import slika from '../public/logo.jpg'
 import favicon from '../public/favicon.ico'
 import pozadina from '../public/o_nama_pozadina.jpg'
 import { AiFillEye, AiFillDropboxCircle } from 'react-icons/ai'
@@ -11,7 +10,6 @@ const About = () => {
 
   const datum = new Date();
   const godina = datum.getFullYear();
-  console.log(slika.src)
   return (
     <div>
       <Head>
@@ -42,10 +40,10 @@ const About = () => {
         </div>
         <div className='w-full md:w-1/2'>
           <Image
-          src={slika.src}
+          src={favicon}
           width = {100}
           height = {100}
-          alt='logo0'
+          alt='logo'
           unoptimized={true} 
           className='px-10 w-11/12 h-fit m-auto md:w-80' 
 />
