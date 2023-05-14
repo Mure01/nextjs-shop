@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Buyform from './buyform'
-
+import Head from 'next/head'
 const ProductDetails = ({product, products}) => {
   const {image, name, details, productKind, price, slug} = product
   const [index, setIndex] = useState(0)
@@ -18,7 +18,7 @@ const ProductDetails = ({product, products}) => {
   const [form, setForm] = useState(false) 
   return (
     <div>
-      
+      <Head><title className='uppercase'>{name} - Ideal namještaj</title></Head>
       <div className='space-y-4 w-full md:w-[100%] lg:w-5/6 m-auto md:flex md:p-10 md:space-x-10'>
         <div className=' hidden md:block'>
 

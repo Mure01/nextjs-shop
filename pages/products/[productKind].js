@@ -1,10 +1,14 @@
 import React from 'react'
 import { client } from '@/lib/client'
 import { Product } from '@/components'
-
+import Head from 'next/head'
 const ProductsList = ({products}) => {
-    return (
+  console.log(products)  
+  const kind = products[0].productKind
+  return (
+      
     <div className=' justify-center w-full box-border p-5 flex flex-wrap gap-7 lg:justify-start'>
+      <Head> <title className=''>Ideal namjestaj - {kind}</title></Head>
         {
             products.map(item => (
                 <Product key={item._id} product={item}/>

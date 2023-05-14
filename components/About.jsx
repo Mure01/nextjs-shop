@@ -1,7 +1,12 @@
 import React from 'react'
 import { Newsletter, Services } from '.'
+import Head from 'next/head'
 import slika from '../public/logo.jpg'
+import favicon from '../public/favicon.ico'
+import pozadina from '../public/o_nama_pozadina.jpg'
 import { AiFillEye, AiFillDropboxCircle } from 'react-icons/ai'
+import Image from 'next/image'
+
 const About = () => {
 
   const datum = new Date();
@@ -9,11 +14,22 @@ const About = () => {
   console.log(slika)
   return (
     <div>
-      <div className=' p-10'>
-        <h1 className='text-center text-2xl'>2018 - O NAMA - {godina}</h1>
+      <Head>
+              <title>O nama - Ideal namještaj</title>
+              <link rel="icon" href={favicon} />
+            </Head>
+      <div className=' h-96 relative'>
+        <Image
+        src={pozadina}
+        width = {100}
+        height = {100}
+        unoptimized={true} 
+        className='w-full h-full object-cover'
+        />
+        <h1 className='text-center md:text-3xl absolute bottom-32  lg:bottom-20 text-[#fff] font-medium w-full left-1/2 -translate-x-1/2'>2018 - O NAMA - {godina}</h1>
       </div>
-      <div className='h-fit bg-background flex flex-wrap'>
-        <div className=' w-full md:w-1/2 px-5 md:px-16 text-justify mt-10
+      <div className=' h-80 items-center bg-background flex flex-wrap'>
+        <div className=' w-full md:w-1/2 px-5 md:px-16 text-justify
          py-5 space-y-5'>
           <h1 className='text-center text-[#fff] text-2xl font-bold'> <span className=' text-org '>IDEAL</span> NAMJEŠTAJ</h1>
 
