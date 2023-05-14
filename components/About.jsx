@@ -11,7 +11,7 @@ const About = () => {
 
   const datum = new Date();
   const godina = datum.getFullYear();
-  console.log(slika)
+  console.log(slika.src)
   return (
     <div>
       <Head>
