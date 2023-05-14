@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from './Navbar'
 import { Footer } from '.'
 const Layout = ( {children} ) => {
+
   return (
     <div>
       <header>
-    <Navbar/>
+        <Navbar /> 
       </header>
       <main> {children} </main>
       <footer>

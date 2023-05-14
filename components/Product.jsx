@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { urlFor } from '@/lib/client'
 const Product = ({product: {image, name, slug, details, price} }) => {
   return (
-    <div>
+    <div className='w-fit'>
       <Link href={`/products/product/${slug.current}`} >
         <div className=' shadow-2xl p-2 bg-[#fff]'>
         <Image

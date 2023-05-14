@@ -30,7 +30,7 @@ const Banner = () => {
         interval={5000}
         showStatus={false}
         showArrows={false}
-        
+        swipeable={false}
 >
       {
         slike.map((slika) => {

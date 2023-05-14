@@ -66,7 +66,7 @@ const Startpage = ({children}) => {
             Na našoj web stranici kupci imaju mogućnost kupovine i konfiguracije namještaja po želji iz iDEAL izuzetno bogate ponude.
           </p>
           </div>
-          <Link href={'#'} className=' w-fit bg-org p-3 rounded-lg mt-20 text-[#fff]'>
+          <Link href='/allproducts' className=' w-fit bg-org p-3 rounded-lg mt-20 text-[#fff]'>
             POGLEDAJTE PONUDU
           </Link>
 
