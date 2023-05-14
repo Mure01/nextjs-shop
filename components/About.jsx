@@ -23,6 +23,7 @@ const About = () => {
         src={pozadina}
         width = {100}
         height = {100}
+        alt='pozadina o nama'
         unoptimized={true} 
         className='w-full h-full object-cover'
         />
@@ -40,7 +41,14 @@ const About = () => {
           </p>
         </div>
         <div className='w-full md:w-1/2'>
-          <img src={slika.src} alt="slika" className='px-10 w-11/12 h-fit m-auto md:w-80' ></img>
+          <Image
+          src={slika.src}
+          width = {100}
+          height = {100}
+          alt='logo0'
+          unoptimized={true} 
+          className='px-10 w-11/12 h-fit m-auto md:w-80' 
+/>
            </div>
       </div>
 

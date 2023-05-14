@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
-
+import Image from 'next/image'
 const Banner = () => {
 
   const [boja, setBoja] = React.useState("plava")
@@ -36,7 +36,14 @@ const Banner = () => {
         slike.map((slika) => {
           return (
             <div key={slika} className=' w-full h-[450px] relative'>
-              <img src={slika} alt='' className=' w-full h-[450px] object-fit aspect-auto' />
+              <Image
+              src={slika}
+              height={100}
+              width={100}
+              unoptimized={true}
+               alt={slika} 
+               className=' w-full h-[450px] object-fit aspect-auto' 
+              />
             </div>
           )
         })

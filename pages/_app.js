@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
     <StateContext>
       <Layout>
         <Head>
-        <link rel="icon" type="image/x-icon" href={fav}/>
+        <link rel="icon" type="image/jpg" href={fav}/>
         <title>Ideal namještaj</title>
         </Head>
         <Component {...pageProps} />
