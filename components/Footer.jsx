@@ -23,7 +23,7 @@ const Footer = () => {
           alt='logo'
         />
       </div>
-
+{/*drustvene mreze pracenje */}
       <div className='space-y-2'>
         <h2 className=' text-2xl'>Pratite nas: </h2>
         <ul className='pl-6'>
@@ -35,6 +35,8 @@ const Footer = () => {
         </Link>
         </ul>
       </div>
+
+{/*radno vrijeme */}
 
       <div className='space-y-2'>
       <h2 className=' text-2xl'>Radno vrijeme: </h2>

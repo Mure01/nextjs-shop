@@ -17,7 +17,7 @@ return (
   </>
   )
 }
-
+/*dohvacanje podataka iz sanitya */
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"]'
   const products = await client.fetch(query)

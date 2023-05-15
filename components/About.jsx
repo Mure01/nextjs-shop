@@ -16,6 +16,7 @@ const About = () => {
       <Head>
               <title>O nama - Ideal namještaj</title>
             </Head>
+      {/* naslovna slika i opis */}
       <div className=' lg:h-96 relative'>
         <Image
         src={pozadina}
@@ -27,6 +28,7 @@ const About = () => {
         />
         <h1 className='text-center flex items-center justify-center text-2xl md:text-3xl absolute top-1/2 -translate-y-1/2 bg-background bg-opacity-70 py-5 md:bottom-32  lg:bottom-20 text-[#fff] font-medium w-full left-1/2 -translate-x-1/2'>2018 - O NAMA - {godina}</h1>
       </div>
+        {/* tekst o firmi i logo slika */}
       <div className=' lg:h-80 items-center bg-background flex flex-wrap'>
         <div className=' w-full md:w-1/2 px-5 md:px-16 text-justify
          py-5 space-y-5'>
@@ -49,8 +51,7 @@ const About = () => {
 />
            </div>
       </div>
-
-
+    {/* misija i vizija tekst */}
       <div className='h-fit flex flex-wrap my-5'>
         <div className=' w-full md:w-1/2 px-5 md:px-16 text-justify md:my-10
          py-5 space-y-5'>
@@ -72,8 +73,6 @@ const About = () => {
           </p>
         </div>
       </div>  
-
-
       <div className=' space-y-10'>
       <Newsletter/>
       <Services/>

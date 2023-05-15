@@ -14,7 +14,6 @@ import { sendKontaktForm } from "../lib/api";
 import Head from "next/head";
 import { Services } from ".";
 import { AiFillEnvironment } from "react-icons/ai";
-import Link from "next/link";
 const initValues = { name: "", email: "", subject: "", message: "" };
 
 const initState = { isLoading: false, error: "", values: initValues };
@@ -66,6 +65,7 @@ export default function Contact() {
 <Container className="flex flex-wrap w-full">  
     <Heading className=" text-3xl w-full text-center uppercase font-semibold pt-5">IDEAL kontakt</Heading>
 
+{/* mapa karte za lokaciju */}
 <Container className="w-full md:w-1/2 mt-8 mb-10">
     <Heading className=" text-2xl pb-5 w-full text-center uppercase font-semibold pt-5">  Potražite nas!</Heading>
     <h2 className=" flex items-center gap-2 w-10/12 m-auto text-xl pb-4"><AiFillEnvironment/>PC 96 Vitez</h2>
@@ -73,6 +73,7 @@ export default function Contact() {
     height="400" allowfullscreen="" className="w-10/12 m-auto" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </Container>
 
+{/*forma za kontakt*/}
 <Container  className=" flex flex-col w-full md:w-1/2 items-center md:pl-11 mt-8 mb-10">
     <Heading className=" text-2xl pb-5 w-full text-center uppercase font-semibold pt-5">Kontaktirajte nas!</Heading>
       {error && (

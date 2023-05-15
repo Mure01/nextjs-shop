@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
 
       <nav className= 'bg-background box-border flex relative items-center p-4 justify-between'> 
-
+      {/*logo slika u hederu */}
         <Link href='/' >
         <Image
           src={logo}
@@ -46,16 +46,18 @@ const Navbar = () => {
           alt='Ideal namjestaj'
           />
           </Link>
-
+      {/*naziv ideal u hederu */}
        <Link href='/' className='mr-auto'>
         <h1 className='text-[#fff] text-3xl mr-auto pl-2 tracking-widest ' >i<span className='text-org'>DEAL</span></h1>
        </Link>
        
+       {/*hamburger ikona za mobitel navbar */}
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
        className={ menu ? 'hidden' : 'block' && "w-6 h-6 text-[#fff] md:hidden"} onClick={() => setMenu(!menu)}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
-
+    
+    {/* navigacija za mobitel */}
       <div className={menu ? 'block z-50' : 'hidden'}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
       className="w-6 h-6 fixed right-5 text-[#fff] top-5 z-10" onClick={() => setMenu(!menu)}>
@@ -95,6 +97,8 @@ const Navbar = () => {
           </Link>
         </ul>
       </div>
+      
+      {/* lista navigacije za vece uredjaje */}  
 
         <ul className=' hidden text-[#fff] md:flex space-x-3 uppercase mr-12'>
           <Link href='/'>

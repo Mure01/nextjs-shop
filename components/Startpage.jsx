@@ -8,7 +8,7 @@ const Startpage = ({children}) => {
 
   return (
     <div>  
-
+    {/*pocetni tekst na pocetnoj stranici */}
     <div className=' flex w-full flex-wrap justify-center lg:h-[45vh] items-center'>
       <h1 className='md:w-2/5 text-center text-4xl font-medium pt-10 md:pt-0 flex flex-wrap justify-center leading-relaxed'>IDEALAN NAMJEŠTAJ ZA <br className=' hidden md:block'></br>VAŠ DOM</h1>
       <div className='md:w-3/5 text-justify p-5 md:p-10 text-xl'>
@@ -22,10 +22,10 @@ const Startpage = ({children}) => {
       </div>
     </div>
 
-
+    {/*recomended componenta  */}
     {children}
     
-    
+    {/*tekst o kompletnom opremanju */}
     <div className='flex flex-wrap bg-background text-[#fff] pt-10 pb-10'>
         <h1 className=' text-3xl uppercase font-normal w-full text-center'>Kompletno opremanje</h1>
         <div className='p-5 md:p-10 text-justify md:w-1/2'>
@@ -53,7 +53,7 @@ const Startpage = ({children}) => {
         </div>
       </div>
 
-
+    {/*tekst za idealnu kupovinu i slika uz to */}
     <div className='flex flex-wrap justify-around pt-10 pb-10'>
         <h1 className=' text-3xl uppercase font-normal w-full text-center'>idealna kupovina</h1>
         <div className='p-5 md:p-10 text-justify flex items-end space-y-10 flex-col md:w-1/2 relative'>

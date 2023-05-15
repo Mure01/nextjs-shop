@@ -7,15 +7,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Buyform from './buyform'
 import Head from 'next/head'
+
+
 const ProductDetails = ({product, products}) => {
   const {image, name, details, productKind, price, slug} = product
   const [index, setIndex] = useState(0)
   let brojac = 0
+
   products.map(product => (
-    ( product.productKind === productKind && product.slug.current !== slug.current ? brojac+=1 : brojac
-    )
+    ( product.productKind === productKind && product.slug.current !== slug.current ? brojac+=1 : brojac)
     ))
+  
   const [form, setForm] = useState(false) 
+  
   return (
     <div>
       <Head><title className='uppercase'>{name} - Ideal namještaj</title></Head>

@@ -2,6 +2,7 @@ import React from 'react'
 import { client } from '@/lib/client'
 import { Product } from '@/components'
 import Head from 'next/head'
+
 const ProductsList = ({products}) => {
   console.log(products)  
   const kind = products[0].productKind
@@ -17,6 +18,8 @@ const ProductsList = ({products}) => {
     </div>
   )
 }
+
+  /*dohvacanje elemenata za istu vrstu */
 
 export const getStaticPaths = async () => {
     const query = `*[_type == "product"] {
