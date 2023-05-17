@@ -9,20 +9,36 @@ const Navbar = () => {
   const productKinds = [
     {
       name: 'Kuhinje',
-      link: '/kuhinja',
+      link: 'kuhinja',
     },
     {
       name: 'Ormari',
-      link: '/ormar',
+      link: 'ormar',
     },
     {
       name: 'Predsoblja',
-      link: '/predsoblje',
+      link: 'predsoblje',
+    },
+    {
+      name: 'Komode',
+      link: 'komode',
+    },
+    {
+      name: 'Ugaone garniture',
+      link: 'ugaonegarniture',
+    },
+    {
+      name: 'Kreveti',
+      link: 'kreveti',
     },
     {
       name: 'Stolovi',
-      link: '/predsoblje',
+      link: 'stol',
     },
+    {
+        name: 'Kupatilski namještaj',
+        link: 'kupatilskinamještaj',
+    }
   ]
 
 
@@ -104,12 +120,12 @@ const Navbar = () => {
           <Link href='/'>
             <li onClick={() => setDropDownMd(false)} className={router.pathname == "/" ? "text-[#e8491d]" : ""}>Početna</li>
           </Link>
-          <div className='flex relative justify-end'>
+          <div className='flex justify-end'>
             <li onClick={() => setDropDownMd(!dropDownMd)} className={router.pathname == "/products/[productKind]" || router.pathname == "products/product/[slug]" ? "text-[#e8491d] hover:cursor-pointer flex items-center" : "hover:cursor-pointer items-center flex"}>Proizvodi 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 ">
   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg></li>
-          <div className={dropDownMd ? 'flex flex-col gap-2 absolute z-50 bg-background p-4 top-12 w-max' : 'hidden'}>
+          <div className={dropDownMd ? 'flex flex-col gap-2 absolute z-50 bg-background p-4 top-[75px] right-[125px] w-max' : 'hidden'}>
            {
             productKinds.map((product)=> {
               return (

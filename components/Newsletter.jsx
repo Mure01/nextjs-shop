@@ -10,7 +10,6 @@ const Newsletter = () => {
       <button type="button" onClick={() => router.push('mailto:idealbih387@gmail.com?subject=Potražnja ponude')}
       className=' bg-[#e8491d] h-fit p-4 rounded-lg uppercase font-normal text-[#fff]'>Zatražite ponudu</button>
     </div>
-
     </div>
   )
 }

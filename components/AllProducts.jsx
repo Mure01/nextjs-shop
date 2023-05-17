@@ -1,13 +1,22 @@
 import React from 'react'
-import { Product } from '.'
+import { Product, Categories } from '.'
+import { Container } from '@chakra-ui/react'
 const AllProducts = ({products}) => {
-    console.log("produkti" + products)
   return (
-    <div className='flex flex-wrap gap-5 justify-evenly my-10'>
+    <>
+    <Container className='flex-col md:flex-row flex '>
+    <Categories/>
+    <div>
+
+      <h1 className=' hidden md:block uppercase font-medium text-2xl w-full sticky top-0 pl-14 py-5 bg-[#ddd]'>Svi proizvodi</h1>
+      <div className='my-10 flex w-full items-center md:pl-14 justify-around flex-wrap'>
         {
-            products.map(product => <Product key={product.id} product={product} />)
+          products.map(product => <Product key={product.id} product={product} />)
         }
-    </div>
+      </div>
+        </div>
+        </Container>
+        </>
   )
 }
 

@@ -1,21 +1,25 @@
 import React from 'react'
 import { client } from '@/lib/client'
-import { Product } from '@/components'
+import { Product, Categories } from '@/components'
 import Head from 'next/head'
-
+import { Container } from '@chakra-ui/react'
 const ProductsList = ({products}) => {
-  console.log(products)  
   const kind = products[0].productKind
   return (
-      
-    <div className=' justify-center w-full box-border p-5 flex flex-wrap gap-7 lg:justify-start'>
-      <Head> <title className=''>Ideal namjestaj - {kind}</title></Head>
+<>
+    <Head> <title className=''>Ideal namjestaj - {kind}</title></Head>
+    <Container className='flex-col md:flex-row flex '>
+      <Categories productKind = {kind}/>
+    <div className=' justify-center w-full md:pl-14 pt-5 box-border flex flex-wrap gap-7 lg:justify-start'>
+
         {
-            products.map(item => (
-                <Product key={item._id} product={item}/>
+          products.map(item => (
+            <Product key={item._id} product={item}/>
             ))
-        }
-    </div>
+          }
+          </div>
+    </Container>
+      </>      
   )
 }
 
@@ -43,7 +47,6 @@ export const getStaticProps = async ({ params: { productKind }}) => {
 
     const query = `*[_type == "product" && productKind == '${productKind}']`;
     const products = await client.fetch(query);
-  
   
       return {
       props: { products }

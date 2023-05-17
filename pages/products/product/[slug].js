@@ -1,10 +1,9 @@
 import React from 'react'
 import { urlFor, client } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-icons/ai'
-import { Product } from '@/components'
+import { Product, Categories } from '@/components'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import Buyform from './buyform'
 import Head from 'next/head'
 
@@ -23,7 +22,7 @@ const ProductDetails = ({product, products}) => {
   return (
     <div>
       <Head><title className='uppercase'>{name} - Ideal namještaj</title></Head>
-      <div className='space-y-4 w-full md:w-[100%] lg:w-5/6 m-auto md:flex md:p-10 md:space-x-10'>
+      <div className=' w-full md:w-[100%] lg:w-5/6 m-auto md:flex md:p-10 md:space-x-10'>
         <div className=' hidden md:block'>
 
       {form && <Buyform/>}
@@ -59,9 +58,9 @@ const ProductDetails = ({product, products}) => {
 }
 
 
-      <div className=' md:min-h-[420px] p-5 md:w-3/5 md:border-l md:pl-10 pt-0  text-justify  md:pr-0 lg:pr-12 relative'>
+      <div className=' md:min-h-[420px] p-5 pb-0 md:w-3/5 md:border-l md:pl-10 pt-0  text-justify  md:pr-0 lg:pr-12 relative'>
       
-      <h1 className=' text-3xl font-medium pb-3'>{name} </h1>
+      <h1 className=' text-3xl font-medium mt-5 pb-3'>{name} </h1>
       <p className='pb-6'>{details}</p>
       <div className='flex flex-wrap'>
 
@@ -93,10 +92,10 @@ const ProductDetails = ({product, products}) => {
       </div>
       </div>
       <div className=' block md:hidden'>
-
+  <Categories />
 {form && <Buyform/>}
   </div>
-       {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl p-4 font-medium'>Slični proizvodi</h1> : ''}
+       {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl pt-10 font-medium'>Slični proizvodi</h1> : ''}
       <div className ='w-full flex snap-mandatory justify-start overflow-scroll pl-12 pr-12 gap-5 md:justify-center no-scrollbar mb-7 space-y-7 lg:gap-5 items-baseline'>
 
     {
