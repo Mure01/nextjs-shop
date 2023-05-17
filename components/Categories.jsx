@@ -54,7 +54,7 @@ const productKinds = [
       </li> 
 
           <div className={showCategory ? 'flex flex-col gap-2  z-100 text-left ml-[25%]' : 'hidden'}>
-          <li className={router.pathname == '/allproducts' ? 'text-background font-medium': ''}>
+          <li onClick={() => setShowCategory(!showCategory)} className={router.pathname == '/allproducts' ? 'text-background font-medium': ''}>
         <Link href="/allproducts" >
           Svi proizvodi
                 </Link>
@@ -63,7 +63,7 @@ const productKinds = [
             productKinds.map((product)=> {
               return (
                 <Link href={`/products/${product.link}`} key={product.name}>
-                  <li className={product.link == productKind ? 'text-org': ''}> {product.name}</li>
+                  <li onClick={() => setShowCategory(!showCategory)} className={product.link == productKind ? 'text-background font-medium': ''}> {product.name}</li>
                 </Link>
               )
             })

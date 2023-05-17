@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 const Product = ({product: {image, name, slug, details, price} }) => {
   const router =  useRouter();
   return (
-  <div className= {router.pathname == "/allproducts" || router.pathname == "/products/[productKind]" ? ' w-[45%] flex flex-col items-center md:w-fit' : ' flex flex-col items-center w-fit' }    >
+  <div className= {router.pathname == "/allproducts" || router.pathname == "/products/[productKind]" ? ' w-[48%] flex flex-col items-center md:w-fit' : ' flex flex-col items-center w-fit' }    >
   <Link href={`/products/product/${slug.current}`} >
         <div className=' shadow-2xl p-2 bg-[#fff]'>
         <Image
