@@ -9,7 +9,7 @@ const AllProducts = ({products}) => {
     <div>
 
       <h1 className=' hidden md:block uppercase font-medium text-2xl w-full sticky top-0 pl-14 py-5 bg-[#ddd]'>Svi proizvodi</h1>
-      <div className='my-10 flex w-full items-center md:pl-14 justify-around flex-wrap'>
+      <div className=' my-5 md:my-10 flex w-full space-y-3 items-center md:pl-14 justify-around flex-wrap'>
         {
           products.map(product => <Product key={product.id} product={product} />)
         }

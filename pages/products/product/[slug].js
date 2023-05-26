@@ -92,20 +92,20 @@ const ProductDetails = ({product, products}) => {
       </div>
       </div>
       <div className=' block md:hidden'>
-  <Categories />
 {form && <Buyform/>}
+        <Categories />
   </div>
        {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl pt-10 font-medium'>Slični proizvodi</h1> : ''}
-      <div className ='w-full flex snap-mandatory justify-start overflow-scroll pl-12 pr-12 gap-5 md:justify-center no-scrollbar mb-7 space-y-7 lg:gap-5 items-baseline'>
+      <div onClick={() => setForm(false)} className ='w-full flex snap-mandatory justify-start overflow-scroll pl-12 pr-12 gap-5 md:justify-center no-scrollbar mb-7 space-y-7 lg:gap-5 items-baseline'>
 
     {
       brojac > 0 &&
       products.map(product => (
         ( product.productKind === productKind && product.slug.current !== slug.current &&
-            <Product product={product} key={product.slug.current}/> 
-        )
-        ))
-      }
+          <Product product={product}  key={product.slug.current}/> 
+          )
+          ))
+        }
       </div>
     </div>
   )

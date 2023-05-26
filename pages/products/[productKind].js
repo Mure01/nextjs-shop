@@ -10,7 +10,7 @@ const ProductsList = ({products}) => {
     <Head> <title className=''>Ideal namjestaj - {kind}</title></Head>
     <Container className='flex-col md:flex-row flex '>
       <Categories productKind = {kind}/>
-    <div className=' justify-center w-full md:pl-14 pt-5 box-border flex flex-wrap gap-3 mb-5 lg:justify-start'>
+    <div className='w-full md:pl-14 pt-5 box-border flex flex-wrap gap-3 mb-5 justify-start'>
 
         {
           products.map(item => (
