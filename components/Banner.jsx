@@ -12,15 +12,6 @@ import Image from 'next/image'
   ] 
   return (
     <>
-<div 
->
-  <iframe loading="lazy"
-  className='w-full h-[450px]'
-    autoPlay={true}
-src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFkBidN74c&#x2F;watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-    
        <div className=' font-bold text-6xl text-center  h-[450px] relative'>
        <Carousel
        className='h-full w-full absolute border-0 flex flex-wrap'
