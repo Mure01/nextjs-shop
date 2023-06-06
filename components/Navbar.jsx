@@ -93,7 +93,7 @@ const Navbar = () => {
 </svg>
 
       </li> 
-          <div className={dropDown ? 'flex flex-col gap-2 z-100 text-left ml-[60%] translate-x-[-40%]' : 'hidden'}>
+          <div className={dropDown ? 'flex flex-col gap-2 z-100 text-left ml-[40%]' : 'hidden'}>
           {
             productKinds.map((product)=> {
               return (

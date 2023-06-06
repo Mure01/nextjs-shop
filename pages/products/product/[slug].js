@@ -38,7 +38,7 @@ const ProductDetails = ({product, products}) => {
       {
         !form && 
         
-        <div className='slug-photo flex flex-col md:items-center md:w-2/5 '>
+        <div className='slug-photo m-0 flex flex-col md:items-center md:w-2/5 '>
       <Image
        src={urlFor(image[index]).url()}
        alt='glavna slika' 
