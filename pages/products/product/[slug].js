@@ -22,22 +22,31 @@ const ProductDetails = ({product, products}) => {
   return (
     <div>
       <Head><title className='uppercase'>{name} - Ideal namještaj</title></Head>
-      <div className=' w-full md:w-[100%] lg:w-5/6 m-auto md:flex md:p-10 md:space-x-10'>
-        <div className=' hidden md:block'>
 
+    <div className='flex'>
+    <div className='hidden md:block'>
+
+      <Categories />
+    </div>
+
+      <div className=' w-full md:w-[100%] mr-auto ml-auto md:pt-10 md:flex md:space-x-10'>
+       <div className='w-fit'>
+       </div>
+        <div className=' hidden md:block'>
       {form && <Buyform/>}
         </div>
       {
         !form && 
-      <div className='slug-photo flex flex-col md:items-center md:w-2/5 '>
+        
+        <div className='slug-photo flex flex-col md:items-center md:w-2/5 '>
       <Image
        src={urlFor(image[index]).url()}
-        alt='glavna slika' 
-        width={300}
-        height={300}
-        className=' w-full h-fit md:h-[450px] md:w-fit  pb-3'
-        unoptimized={true} 
-        />
+       alt='glavna slika' 
+       width={300}
+       height={300}
+       className=' w-full h-fit md:h-[450px] md:w-fit  pb-3'
+       unoptimized={true} 
+       />
       <div className='flex space-x-5 flex-wrap pl-3 justify-start space-y-4 items-baseline'>
         {
           image.map((img, i) => (
@@ -49,7 +58,7 @@ const ProductDetails = ({product, products}) => {
                 width={70}
                 className=' h-24 w-fit hover:cursor-pointer '
                 unoptimized={true}
-              />
+                />
             </a>
             ))
           }
@@ -58,7 +67,7 @@ const ProductDetails = ({product, products}) => {
 }
 
 
-      <div className=' md:min-h-[420px] p-5 pb-0 md:w-3/5 md:border-l md:pl-10 pt-0  text-justify  md:pr-0 lg:pr-12 relative'>
+      <div className='md:h-[620px] p-5 pb-0 md:w-3/5 md:border-l md:pl-10 pt-0  text-justify  md:pr-0 lg:pr-12 relative'>
       
       <h1 className=' text-3xl font-medium mt-5 pb-3'>{name} </h1>
       <p className='pb-6'>{details}</p>
@@ -91,13 +100,13 @@ const ProductDetails = ({product, products}) => {
       </div>
       </div>
       </div>
-      <div className=' block md:hidden'>
-{form && <Buyform/>}
-        <Categories />
   </div>
-       {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl pt-10 font-medium'>Slični proizvodi</h1> : ''}
+      <div className=' block md:hidden'>
+      <Categories/>
+       </div>
+{form && <Buyform/>}
+       {brojac > 0 ?   <h1 className = ' text-center uppercase text-xl md:text-2xl pt-5 pb-2 '>Slični proizvodi</h1> : ''}
       <div onClick={() => setForm(false)} className ='w-full flex snap-mandatory justify-start overflow-scroll pl-12 pr-12 gap-5 md:justify-center no-scrollbar mb-7 space-y-7 lg:gap-5 items-baseline'>
-
     {
       brojac > 0 &&
       products.map(product => (
@@ -106,23 +115,23 @@ const ProductDetails = ({product, products}) => {
           )
           ))
         }
+        </div>
       </div>
-    </div>
   )
 }
 
 export const getStaticPaths = async () => {
-    const query = `*[_type == "product"] {
-      slug {
-        current
-      }, 
-      productKind
-    }
-    `;
+  const query = `*[_type == "product"] {
+    slug {
+      current
+    }, 
+    productKind
+  }
+  `;
   
-    const products = await client.fetch(query);
+  const products = await client.fetch(query);
   
-    const paths = products.map((product) => ({
+  const paths = products.map((product) => ({
       params: { 
         slug: product.slug.current,
       },
@@ -131,19 +140,19 @@ export const getStaticPaths = async () => {
       paths,
       fallback: 'blocking'
     }
-
+    
   }
 export const getStaticProps = async ({ params:{slug }}) => {
-    const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-    const productsQuery = `*[_type == "product"]`
-    
-    const product = await client.fetch(query);
-    const products = await client.fetch(productsQuery);
-
-    
-      return {
-      props: { products, product }
-    }
+  const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
+  const productsQuery = `*[_type == "product"]`
+  
+  const product = await client.fetch(query);
+  const products = await client.fetch(productsQuery);
+  
+  
+  return {
+    props: { products, product }
   }
+}
   
 export default ProductDetails

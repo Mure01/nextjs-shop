@@ -1,8 +1,8 @@
 import React from 'react'
-import logo from '../public/logo_header.jpg'
+import logo from '../public/logo.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AiFillClockCircle, AiFillCopy, AiFillFacebook, AiFillInstagram, AiFillSchedule, AiFillSecurityScan } from 'react-icons/ai'
+import { AiFillClockCircle, AiFillCopy, AiFillFacebook, AiFillInstagram, AiFillSchedule, AiFillSecurityScan, AiOutlineArrowUp } from 'react-icons/ai'
 
 
 const Footer = () => {
@@ -10,6 +10,10 @@ const Footer = () => {
   const copyright = String.fromCodePoint(0x00A9);
   const datum = new Date();
   const godina = datum.getFullYear();
+
+  const scrolltop = () => {
+    window.scrollTo({top:0, behavior: 'smooth'})
+  }
 
   return (
     <div>
@@ -45,6 +49,12 @@ const Footer = () => {
           <li> Subota : 7:00 - 15:00 </li>
           <li> Nedjelja : neradni dan </li>
         </ul>
+      </div>
+      <div>
+        <p onClick = { scrolltop } className='flex cursor-pointer items-center'>
+        <AiOutlineArrowUp/> Top
+
+        </p>
       </div>
     </div>
       <h4 className=' text-center p-3 bg-background text-[#fff] border-t-[1px] '>Sva prava zadržana {copyright}, Ideal namještaj { godina }</h4>

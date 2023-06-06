@@ -6,10 +6,10 @@ const AllProducts = ({products}) => {
     <>
     <Container className='flex-col md:flex-row flex '>
     <Categories/>
-    <div>
-
+    <div className='w-full'>
       <h1 className=' hidden md:block uppercase font-medium text-2xl w-full sticky top-0 pl-14 py-5 bg-[#ddd]'>Svi proizvodi</h1>
-      <div className=' my-5 md:my-10 flex w-full space-y-3 items-center md:pl-14 justify-around flex-wrap'>
+
+      <div className=' my-5 md:my-5 flex w-full space-y-3 items-center  justify-around flex-wrap'>
         {
           products.map(product => <Product key={product.id} product={product} />)
         }

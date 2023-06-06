@@ -15,7 +15,7 @@ const Product = ({product: {image, name, slug, details, price} }) => {
           alt="opis"
           width={300}
           height={300}
-          className=  {router.pathname == "/allproducts" || router.pathname == "/products/[productKind]" ? ' h-52 w-full md:h-80 md:w-fit  ' : ' h-80 w-fit' } 
+          className=  {router.pathname == "/allproducts" || router.pathname == "/products/[productKind]" ? ' h-52 w-full md:h-80 md:w-72  ' : ' h-80 w-fit' } 
           unoptimized={true} 
           />
           <p className=' uppercase text-center pt-2 pb-2 font-medium text-xl' >{name}</p>
@@ -23,7 +23,10 @@ const Product = ({product: {image, name, slug, details, price} }) => {
           className={router.pathname == "/allproducts" || router.pathname == "/products/[productKind]" ? ' md:w-56 mb-2 text-justify p-1 overflow-hidden whitespace-wrap line-clamp-2 text-ellipsis':
           'w-56 mb-2 text-justify p-1 overflow-hidden whitespace-wrap line-clamp-2 text-ellipsis'}
           >  {details}</p>
-          <p className='w-full bg-background p-2 text-center text-[#fff] uppercase'>Cijena:<br></br> {price ?<> {price} KM</> : "Po dogovoru"}</p>
+          {
+          //Cijena:<br></br> {price ?<> {price} KM</> : "Po dogovoru"}
+          }
+          <p className='w-full bg-background p-2 text-center text-[#fff] uppercase'>Detaljnjije</p>
           </div>
           </Link>
           </div>
